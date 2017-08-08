@@ -12,4 +12,17 @@ class MyPhotos {
         }
         return $file_ary;
     }
+
+    function save_photos($photos) {
+        $photos_arr = [];
+
+        foreach($photos as $val) {
+            $newname = date('YmdHis',time()).mt_rand().'.jpg';
+            $new_path = __ROOT__.'/src/photos/'.$newname;
+            move_uploaded_file($val['tmp_name'], $new_path);
+
+            $photos_arr[] = $new_path;
+        }
+        return $photos_arr;
+    }
 }
