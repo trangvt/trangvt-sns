@@ -4,7 +4,7 @@ My project to test uploading media on SNS
 Facebook
 + Facebook SDK for PHP: https://github.com/facebook/php-graph-sdk
 + https://developers.facebook.com/docs/graph-api/photo-uploads
-+ Manage youe apps: https://developers.facebook.com/apps/
++ Manage you apps: https://developers.facebook.com/apps/
 
 Twitter:
 + https://github.com/themattharris/tmhOAuth
