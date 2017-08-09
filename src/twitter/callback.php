@@ -25,35 +25,35 @@ $tmhOAuth->request(
 
 var_dump($tmhOAuth->response['response']);
 
-die();
-$response = $tmhOAuth->extract_params($tmhOAuth->response["response"]);
-$tmhOAuth->config["user_token"] = $response['oauth_token']; 
-$tmhOAuth->config["user_secret"] = $response['oauth_token_secret'];
+$response_oauth = $tmhOAuth->extract_params($tmhOAuth->response["response"]);
+$tmhOAuth->config["user_token"] = $response_oauth['oauth_token']; 
+$tmhOAuth->config["user_secret"] = $response_oauth['oauth_token_secret'];
 
-$code = $tmhOAuth->request(
-    'POST', 
-    'https://upload.twitter.com/1.1/media/upload.json',
-    [
-        'media_data' => base64_encode(file_get_contents($img)),
-        'status' => $txt 
-    ],
-    true, // use auth
-    true // multipart
-);
+foreach ($photos_arr as $key => $photo) {
+    $response_upload = $tmhOAuth->request(
+        'POST',
+        'https://upload.twitter.com/1.1/media/upload.json',
+        [
+            'media_data' => base64_encode(file_get_contents($photo)),
+        ],
+        true, // use auth
+        true // multipart
+    );
 
-$upload_json = json_decode($tmhOAuth->response['response']);
+    $upload_json = json_decode($tmhOAuth->response['response']);
 
-if ($code == 200){
-    echo 'upload successfully';
-    
-    $code = $tmhOAuth->user_request(array(
-        'method' => 'POST',
-        'url'    => $tmhOAuth->url('1.1/statuses/update'),
-        'params' => array(
-          'media_ids' => $upload_json->media_id,
-          'status'    => 'Picture time',
-        )
-    ));
-    
-} else {
+    if ($response_upload == 200){
+        echo 'upload successfully';
+        
+        $tmhOAuth->user_request(array(
+            'method' => 'POST',
+            'url'    => $tmhOAuth->url('1.1/statuses/update'),
+            'params' => array(
+              'media_ids' => $upload_json->media_id,
+              'status'    => $caption,
+            )
+        ));
+    } else {
+
+    }
 }
