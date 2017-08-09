@@ -6,7 +6,7 @@ use Facebook\FacebookRequest;
 use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
 
-class Login {
+class MyFacebook {
     public function __construct() {
         $this->fb = new Facebook\Facebook([
             'app_id' => APP_ID_ENV_NAME,
@@ -68,5 +68,42 @@ class Login {
         }
 
         return $accessToken->getValue();
+    }
+
+    /**
+     * Publish photos to an user page
+     * @param  [string] $caption      [description]
+     * @param  [array] $photos       [description]
+     * @param  [string] $access_token [description]
+     * @param  [string] $url          [description]
+     * @return [boolean]               [description]
+     */
+    public function fb_publish_photos($caption, $photos, $access_token, $url) {
+        $photos_arr = [];
+
+        foreach ($photos as $photo) {
+            $fb_photos = [
+                'message' => $caption,
+                'source' => $this->fb->fileToUpload($photo)
+            ];
+
+            try {
+                $response = $this->fb->post(
+                    $url,
+                    $fb_photos,
+                    $access_token
+                );
+            } catch(Facebook\Exceptions\FacebookResponseException $e) {
+                echo 'Graph returned an error: ' . $e->getMessage();
+                exit;
+            } catch(Facebook\Exceptions\FacebookSDKException $e) {
+                echo 'Facebook SDK returned an error: ' . $e->getMessage();
+                exit;
+            }
+
+            $graphNode = $response->getGraphNode();
+        }
+
+        return TRUE;
     }
 }

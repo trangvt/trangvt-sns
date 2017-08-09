@@ -4,6 +4,7 @@ define('__ROOT__', dirname(dirname(__FILE__)));
 require_once __ROOT__ . '/php-graph-sdk/src/Facebook/autoload.php';
 require_once __ROOT__ . '/instagram-photo-video-upload-api/instagram-photo-video-upload-api.class.php';
 require_once __ROOT__ . '/tmhOAuth/tmhOAuth.php';
+
 require_once __ROOT__ . '/src/MyPhotos.php';
 
 //facebook

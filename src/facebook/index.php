@@ -1,8 +1,8 @@
 <?php
 require_once(dirname(dirname(__FILE__)).'/config.php');
-require_once('Login.php');
+require_once('MyFacebook.php');
 
 $permissions = ['email', 'publish_actions'];
 
-$login = new Login();
-$login->login($permissions);
+$fb = new MyFacebook();
+$fb->login($permissions);
