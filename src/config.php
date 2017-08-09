@@ -11,6 +11,10 @@ require_once __ROOT__ . '/src/MyPhotos.php';
 define('APP_ID_ENV_NAME', '138091156790292');
 define('APP_SECRET_ENV_NAME', '2cc1b61c57b133a92144f8143043638d');
 define('DEFAULT_GRAPH_VERSION', 'v2.10');
+//Instagram
+define('INSTA_USER', 'itestseo');
+define('INSTA_PASS', '27081991');
+//Twitter
 $setting = [
     'twitter' => [
             'tw_consumer_key' => 'sGLxhoKRzje36QCYHVm7spu6B',
@@ -18,18 +22,18 @@ $setting = [
             'access_token' => '893305114496303104-Al3lUqqAMGLmUqvTh4ixK1wKlYtAQs1',
             'access_token_secret' => 'yhOITmjMsgLkpSe5b5BD3qhEyojWuCSGDaXa7KhpD12Gi'
         ],
-    'instagram' => [
-            'insta_user' => 'itestseo',
-            'insta_' => '27081991',
-        ],
 ];
 
 $root_url = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
 define('ROOT_URL', $root_url);
 define('PHOTOS_FOLDER', '/src/photos/');
 
+// http://php.net/manual/en/function.exif-imagetype.php
 $GLOBALS['image_types'] = [
     1 => 'gif',
     2 => 'jpeg',
     3 => 'png',
+    6 => 'bmp',
+    7 => 'tiff',
+    8 => 'tiff',
 ];

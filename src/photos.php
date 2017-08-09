@@ -18,6 +18,9 @@ $photos = $photos_obj->reArrayFiles($uploaded_photos);
 $_SESSION['caption'] = $_REQUEST['caption'];
 $_SESSION['photos_arr'] = $photos_obj->save_photos($photos);
 
+echo '<pre>$_SESSION</br>';
+var_dump($_SESSION);
+echo '</pre>';
 ?>
 <div>
     <div>

@@ -14,8 +14,8 @@ echo '<pre>$_SESSION</br>';
 var_dump($_SESSION);
 echo '</pre>';
 
-// $fb->fb_publish_photos($caption, $photos_arr, $_SESSION['fb_access_token'], $url);
+$fb->fb_publish_photos($caption, $photos_arr, $_SESSION['fb_access_token'], $url);
 
-$photos_obj = new MyPhotos();
-$photos_obj->delete_photos($photos_arr);
+// $photos_obj = new MyPhotos();
+// $photos_obj->delete_photos($photos_arr);
 ?>
