@@ -7,6 +7,9 @@ use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
 
 class MyFacebook {
+    /**
+     * Init object
+     */
     public function __construct() {
         $this->fb = new Facebook\Facebook([
             'app_id' => APP_ID_ENV_NAME,
@@ -15,7 +18,12 @@ class MyFacebook {
         ]);
     }
 
-    public function login($permissions = []) {
+    /**
+     * Authentication
+     * @param  array  $permissions [description]
+     * @return [type]              [description]
+     */
+    public function login($permissions) {
         $current_path = $_SERVER['REQUEST_URI'];
         $callback = 'callback.php';
         
@@ -27,6 +35,10 @@ class MyFacebook {
         exit();
     }
 
+    /**
+     * Get access token after authenticate
+     * @return [string] [description]
+     */
     public function get_access_token() {
         $helper = $this->fb->getRedirectLoginHelper();
         $_SESSION['FBRLH_state'] = $_GET['state'];
