@@ -21,7 +21,7 @@
  * DEALINGS IN THE SOFTWARE.
  *
  */
-date_default_timezone_set('Europe/Paris');
+date_default_timezone_set('Asia/Tokyo');
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
