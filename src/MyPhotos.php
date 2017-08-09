@@ -25,4 +25,8 @@ class MyPhotos {
         }
         return $photos_arr;
     }
+
+    public function publish_photos($photos) {
+        $photos_arr = [];
+    }
 }

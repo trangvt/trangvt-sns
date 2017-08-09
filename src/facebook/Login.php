@@ -12,7 +12,7 @@ class Login {
             'app_id' => APP_ID_ENV_NAME,
             'app_secret' => APP_SECRET_ENV_NAME,
             'default_graph_version' => DEFAULT_GRAPH_VERSION
-        ]); 
+        ]);
     }
 
     public function login($permissions = []) {
