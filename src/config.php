@@ -26,3 +26,10 @@ $setting = [
 
 $root_url = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
 define('ROOT_URL', $root_url);
+define('PHOTOS_FOLDER', '/src/photos/');
+
+$GLOBALS['image_types'] = [
+    1 => 'gif',
+    2 => 'jpeg',
+    3 => 'png',
+];
