@@ -6,12 +6,11 @@ require_once __ROOT__ . '/instagram-photo-video-upload-api/instagram-photo-video
 require_once __ROOT__ . '/tmhOAuth/tmhOAuth.php';
 require_once __ROOT__ . '/src/MyPhotos.php';
 
+//facebook
+define('APP_ID_ENV_NAME', '138091156790292');
+define('APP_SECRET_ENV_NAME', '2cc1b61c57b133a92144f8143043638d');
+define('DEFAULT_GRAPH_VERSION', 'v2.10');
 $setting = [
-    'facebook' => [
-            'fb_app_id' => '138091156790292',
-            'fb_app_secret' => '2cc1b61c57b133a92144f8143043638d',
-            'fb_api_version' => 'v2.10'
-        ],
     'twitter' => [
             'tw_consumer_key' => 'sGLxhoKRzje36QCYHVm7spu6B',
             'tw_consumer_secret' => '9Ivt6pDKr9W9WxqfsvIJA9ADQt910kmazBLSYLHAs2TLB1BzVk',
@@ -24,4 +23,5 @@ $setting = [
         ],
 ];
 
-$root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
+$root_url = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
+define('ROOT_URL', $root_url);

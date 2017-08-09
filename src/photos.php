@@ -22,15 +22,15 @@ $_SESSION['photos_arr'] = $photos_obj->save_photos($photos);
 <div>
     <div>
         <h4>Facebook</h4>
-        <a href="facebook/index.php" target="_blank">Facebook</a>
+        <a href="facebook/" target="_blank">Facebook</a>
     </div>
     <div>
         <h4>Twitter</h4>
-        <a href="twitter/index.php">Facebook</a>
+        <a href="twitter/">Twitter</a>
     </div>
     <div>
         <h4>Instagram</h4>
-        <a href="instagram/index.php">Facebook</a>
+        <a href="instagram/">Instagram</a>
     </div>
     </br>
 </div>
