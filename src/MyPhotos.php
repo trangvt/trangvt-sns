@@ -1,6 +1,6 @@
 <?php
 class MyPhotos {
-    function reArrayFiles($file) {
+    public function reArrayFiles($file) {
         $file_ary = [];
         $file_count = count($file['name']);
         $file_key = array_keys($file);
@@ -13,7 +13,7 @@ class MyPhotos {
         return $file_ary;
     }
 
-    function save_photos($photos) {
+    public function save_photos($photos) {
         $photos_arr = [];
 
         foreach($photos as $val) {
