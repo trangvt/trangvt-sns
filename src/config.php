@@ -15,14 +15,10 @@ define('DEFAULT_GRAPH_VERSION', 'v2.10');
 define('INSTA_USER', 'itestseo');
 define('INSTA_PASS', '27081991');
 //Twitter
-$setting = [
-    'twitter' => [
-            'tw_consumer_key' => 'sGLxhoKRzje36QCYHVm7spu6B',
-            'tw_consumer_secret' => '9Ivt6pDKr9W9WxqfsvIJA9ADQt910kmazBLSYLHAs2TLB1BzVk',
-            'access_token' => '893305114496303104-Al3lUqqAMGLmUqvTh4ixK1wKlYtAQs1',
-            'access_token_secret' => 'yhOITmjMsgLkpSe5b5BD3qhEyojWuCSGDaXa7KhpD12Gi'
-        ],
-];
+define('CONSUMER_KEY', 'sGLxhoKRzje36QCYHVm7spu6B');
+define('CONSUMER_KEY_SECRET', '9Ivt6pDKr9W9WxqfsvIJA9ADQt910kmazBLSYLHAs2TLB1BzVk');
+define('ACCESS_TOKEN', '893305114496303104-Al3lUqqAMGLmUqvTh4ixK1wKlYtAQs1');
+define('ACCESS_TOKEN_SECRET', 'yhOITmjMsgLkpSe5b5BD3qhEyojWuCSGDaXa7KhpD12Gi');
 
 $root_url = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'];
 define('ROOT_URL', $root_url);

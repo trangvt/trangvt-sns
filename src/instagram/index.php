@@ -6,10 +6,6 @@ require_once(dirname(dirname(__FILE__)).'/config.php');
 $insta = new InstagramUpload();
 $insta->Login(INSTA_USER, INSTA_PASS);
 
-echo '<pre>$_SESSION</br>';
-var_dump($_SESSION);
-echo '</pre>';
-
 $caption = $_SESSION['caption'];
 $photos_arr = $_SESSION['photos_arr'];
 
