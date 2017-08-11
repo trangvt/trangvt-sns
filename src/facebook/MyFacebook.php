@@ -91,8 +91,6 @@ class MyFacebook {
      * @return [boolean]               [description]
      */
     public function fb_publish_photos($caption, $photos, $access_token, $url) {
-        $photos_arr = [];
-
         foreach ($photos as $photo) {
             $fb_photos = [
                 'message' => $caption,
