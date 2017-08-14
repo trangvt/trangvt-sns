@@ -56,7 +56,7 @@ class MyPhotos {
      * @return [boolean]         [description]
      */
     public function delete_all_photos() {
-        $files = glob('path/to/temp/*');
+        $files = glob(__ROOT__.PHOTOS_FOLDER.'/*');
         foreach ($files as $file) {
             if (is_file($file))
                 unlink($file);

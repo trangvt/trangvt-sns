@@ -29,11 +29,15 @@ echo '</pre>';
     </div>
     <div>
         <h4>Twitter</h4>
-        <a href="twitter/">Twitter</a>
+        <a href="twitter/" target="_blank">Twitter</a>
     </div>
     <div>
         <h4>Instagram</h4>
-        <a href="instagram/">Instagram</a>
+        <a href="instagram/" target="_blank">Instagram</a>
     </div>
     </br>
+    <div>
+        <h4>Delete</h4>
+        <a href="delete.php" target="_blank">Delete all photos</a>
+    </div>
 </div>
