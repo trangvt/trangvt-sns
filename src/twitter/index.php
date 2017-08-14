@@ -14,7 +14,10 @@ $photos_arr = $_SESSION['photos_arr'];
 
 setcookie('oauth_token', $oauth_token, time() + (86400 * 30), "/");
 setcookie('oauth_token_secret', $oauth_token_secret, time() + (86400 * 30), "/");
-setcookie("caption", $_SESSION['caption'], time() + 3600 * 30, '/');
-setcookie("photos_arr", json_encode($photos_arr), time() + 3600 * 30, '/');
+
+echo '<pre>$_SESSION</br>';
+var_dump($_SESSION);
+var_dump($_COOKIE);
+echo '</pre>';
 
 $twitter->twitter_login($oauth_token);
