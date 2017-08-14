@@ -12,10 +12,6 @@ $caption = $_SESSION['caption'];
 $photos_arr = $_SESSION['photos_arr'];
 $url = '/me/photos';
 
-echo '<pre>$_SESSION</br>';
-var_dump($_SESSION);
-echo '</pre>';
-
 $respone = $fb->fb_publish_photos($caption, $photos_arr, $fb_access_token, $url);
 
 if ($respone)

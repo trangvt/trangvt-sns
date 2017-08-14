@@ -40,7 +40,7 @@ class MyTwitter extends tmhOAuth {
         exit();
     }
 
-    public function generate_oauth_token($oauth_verifier) {
+    public function generate_user_token($oauth_verifier) {
         $to = $this->tmhOAuth;
 
         $to->request(
