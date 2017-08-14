@@ -50,4 +50,18 @@ class MyPhotos {
 
         return TRUE;
     }
+
+    /**
+     * Delete all photos
+     * @return [boolean]         [description]
+     */
+    public function delete_all_photos() {
+        $files = glob('path/to/temp/*');
+        foreach ($files as $file) {
+            if (is_file($file))
+                unlink($file);
+        }
+
+        return TRUE;
+    }
 }
